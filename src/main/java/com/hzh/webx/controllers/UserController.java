@@ -14,7 +14,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/userInfo")
+    @RequestMapping("/user/info")
     public String userInfo(Model model) {
         model.addAttribute("message", "Hello World!");
         model.addAttribute("userName", "Adam");
