@@ -40,7 +40,7 @@ public class UserControllerTest {
 
     @Test
     public void userInfo() throws Exception {
-        this.mockMvc.perform(get("/userInfo").accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
+        this.mockMvc.perform(get("/user/welcome").accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
                 .andExpect(status().isOk()).andDo(print()).andExpect(model().attribute("userName", "Adam"));
     }
 
