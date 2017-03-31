@@ -1,5 +1,7 @@
 package com.hzh.webx.services.transaction.propagation;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,10 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 public class AddressServiceImpl implements AddressService {
+    private Logger logger = LoggerFactory.getLogger(AddressServiceImpl.class);
+
     @Override
     @Transactional
     public void saveAddress() {
-        System.out.println("Saving delivery address.");
+        logger.info("Saving delivery address.");
         throw new RuntimeException("Fail to save delivery address.");
     }
 }

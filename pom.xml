@@ -10,6 +10,7 @@
     <properties>
         <spring.version>4.3.7.RELEASE</spring.version>
         <aspectj.version>1.8.9</aspectj.version>
+        <slf4j.version>1.7.25</slf4j.version>
     </properties>
 
     <dependencies>
@@ -80,6 +81,16 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
     <build>

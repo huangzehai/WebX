@@ -1,5 +1,7 @@
 package com.hzh.webx.services.transaction.propagation;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,14 +11,14 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 public class OrderServiceImpl implements OrderService {
-
+    private Logger logger = LoggerFactory.getLogger(OrderServiceImpl.class);
     @Autowired
     private AddressService addressService;
 
     @Override
     @Transactional
     public void saveOrder() {
-        System.out.println("Save order information");
+        logger.info("Save order information");
         addressService.saveAddress();
     }
 }
