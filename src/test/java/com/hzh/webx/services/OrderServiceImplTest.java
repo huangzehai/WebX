@@ -2,10 +2,10 @@ package com.hzh.webx.services;
 
 import com.hzh.webx.model.Address;
 import com.hzh.webx.model.Order;
-import com.hzh.webx.services.OrderService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.ContextHierarchy;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -22,6 +22,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 })
 public class OrderServiceImplTest {
     @Autowired
+    @Qualifier("orderService")
     private OrderService orderService;
 
     @Test

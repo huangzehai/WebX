@@ -26,14 +26,19 @@
     </appender>
 
 
-    <logger name="org.springframework.transaction" additivity="false">
+    <logger name="org.springframework" additivity="false">
+        <level value="DEBUG" />
+        <appender-ref ref="consoleAppender" />
+    </logger>
+
+    <logger name="com.hzh.webx" additivity="false">
         <level value="DEBUG" />
         <appender-ref ref="dailyRollingFileAppender"/>
         <appender-ref ref="consoleAppender" />
     </logger>
 
     <root>
-        <level value="INFO" />
+        <level value="ERROR" />
         <appender-ref ref="consoleAppender" />
     </root>
 </configuration>

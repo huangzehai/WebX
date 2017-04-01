@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -20,10 +21,10 @@ public class AddressServiceImpl implements AddressService {
     private AddressMapper addressMapper;
 
     @Override
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRED)
     public void saveAddress(Address address) {
         logger.info("Saving delivery address.");
         addressMapper.addAddress(address);
-//        throw new RuntimeException("Fail to save delivery address.");
+        throw new RuntimeException("Fail to save delivery address.");
     }
 }
